@@ -26,7 +26,7 @@ class DBConnection:
                 newTuple = (row[0], source, typeOfValue, row[1], row[2], row[3], row[4], row[5])
                 newList.append(newTuple)
 
-            cursor.executemany("""INSERT INTO "{0}_{1}" values (?,?,?,?,?,?,?,?)""".format(timeframe, name), newList)
+            cursor.executemany(sqlite3."""INSERT INTO "{0}_{1}" values (?,?,?,?,?,?,?,?)""".format(timeframe, name), newList)
             self.connection.commit()
         except Exception as e:
             print(str(e))
