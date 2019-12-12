@@ -70,3 +70,10 @@ class DBConnection:
             return your_list
         except Exception as e:
             print(str(e))
+    
+    def createDatabase(self):
+        try:
+            self.insertInstrumentData('USDJPY', 'Dukascopy','1H', 'ASK', './csv/USDJPY/1H/USDJPY_Candlestick_1_Hour_ASK_31.12.2004-06.12.2019.csv')
+            self.insertInstrumentData('USDJPY', 'Dukascopy','1H', 'BID', './csv/USDJPY/1H/USDJPY_Candlestick_1_Hour_BID_31.12.2004-06.12.2019.csv')
+        except Exception as e:
+            print(str(e))
